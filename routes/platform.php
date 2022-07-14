@@ -123,14 +123,14 @@ Route::screen('tabelas', Tabelas::class)->name('platform.tabelas');
 Route::screen('dominios', Dominios::class)->name('platform.dominios');
 Route::screen('estabelecimentos', Estabelecimentos::class)->name('platform.estabelecimentos');
 Route::screen('plantoes', Plantao::class)->name('platform.plantao');
-
-Route::screen('tecnicos', Tecnicos::class)
+Route::screen('tecnicos', Tecnicos::class)->name('platform.tecnicos');
+/* Route::screen('tecnicos', Tecnicos::class)
 ->name('platform.tecnicos')
 ->breadcrumbs(function (Trail $trail) {
     return $trail
         ->parent('platform.tecnicos')
         ->push(__('Tecnicos'), route('platform.tecnicos'));
-});
+}); */
 
 
 

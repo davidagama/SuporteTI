@@ -29,7 +29,7 @@ class Tecnicos extends Screen
     {
         return [
 
-            'tecnicos' => TecnicosModel::with('roles')->filters()->defaultSort('id')->paginate(),
+            'tecnicos' => TecnicosModel::filters()->defaultSort('id')->paginate(),
         ];
     }
 
