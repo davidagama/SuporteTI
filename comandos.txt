@@ -1,0 +1,21 @@
+composer create-project laravel/laravel orchid-project "9.*" --prefer-dist
+
+composer require orchid/platform
+
+php artisan orchid:admin admin admin@admin.com admin
+
+composer update orchid/platform --with-dependencies
+
+php artisan serve --host=10.11.1.53 --port=8080
+
+php artisan migrate:generate --tables="tb_kyoceras"
+
+php artisan cache:clear
+
+php artisan migrate:status
+
+composer require --dev "kitloong/laravel-migrations-generator"
+
+php artisan orchid:publish
+
+php artisan view:clear
