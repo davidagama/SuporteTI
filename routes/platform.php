@@ -118,6 +118,7 @@ Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.exam
 Route::screen('example-editors', ExampleTextEditorsScreen::class)->name('platform.example.editors');
 Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.example.cards');
 Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
+
 Route::screen('tabelas', Tabelas::class)->name('platform.tabelas');
 Route::screen('dominios', Dominios::class)->name('platform.dominios');
 Route::screen('estabelecimentos', Estabelecimentos::class)->name('platform.estabelecimentos');

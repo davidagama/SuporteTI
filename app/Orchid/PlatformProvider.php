@@ -29,6 +29,13 @@ class PlatformProvider extends OrchidServiceProvider
     {
         return [
 
+            Menu::make(__('Access rights'))
+            ->icon('lock')
+            ->slug('Auth')
+            ->active('platform.systems.*')
+            ->permission('platform.systems.index')
+            ->sort(1000),
+
             Menu::make(__('Users'))
                 ->icon('user')
                 ->route('platform.systems.users')
@@ -140,11 +147,18 @@ class PlatformProvider extends OrchidServiceProvider
     }
 
     /**
-     * @return ItemMenu[]
+     * @return Menu[]
      */
     public function registerSystemMenu(): array
     {
         return [
+            Menu::make(__('Access rights'))
+            ->icon('lock')
+            ->slug('Auth')
+            ->active('platform.systems.*')
+            ->permission('platform.systems.index')
+            ->sort(1000),
+
             Menu::make(__('Users'))
                 ->icon('user')
                 ->route('platform.systems.users')
