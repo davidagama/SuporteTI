@@ -29,7 +29,7 @@ class Tecnicos extends Screen
     {
         return [
 
-            'tecnicos' => TecnicosModel::filters()->defaultSort('id')->paginate(),
+            'tecnicos' => TecnicosModel::with('roles')->filters()->defaultSort('id')->paginate(),
         ];
     }
 
@@ -48,6 +48,15 @@ class Tecnicos extends Screen
        
     }
 
+    /**
+     * @return iterable|null
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'platform.tecnicos',
+        ];
+    }
     /**
      * Button commands.
      *

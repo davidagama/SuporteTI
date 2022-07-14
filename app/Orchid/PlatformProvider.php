@@ -29,12 +29,12 @@ class PlatformProvider extends OrchidServiceProvider
     {
         return [
 
-            Menu::make(__('Access rights'))
-            ->icon('lock')
-            ->slug('Auth')
-            ->active('platform.systems.*')
-            ->permission('platform.systems.index')
-            ->sort(1000),
+            Menu::make(__('Systems'))
+                ->icon('lock')
+                ->slug('Auth')
+                ->active('platform.systems.*')
+                ->permission('platform.systems.index')
+                ->sort(1000),
 
             Menu::make(__('Users'))
                 ->icon('user')
@@ -56,9 +56,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('calendar')
                 ->route('platform.plantao'),
 
-            Menu::make('Técnicos')
+            Menu::make(__('Técnicos'))
                 ->icon('friends')
-                ->route('platform.tecnicos'),
+                ->route('platform.tecnicos')
+                ->permission('platform.tecnicos'),
 
             Menu::make('Publicações')
                 ->icon('book-open')
@@ -153,11 +154,11 @@ class PlatformProvider extends OrchidServiceProvider
     {
         return [
             Menu::make(__('Access rights'))
-            ->icon('lock')
-            ->slug('Auth')
-            ->active('platform.systems.*')
-            ->permission('platform.systems.index')
-            ->sort(1000),
+                ->icon('lock')
+                ->slug('Auth')
+                ->active('platform.systems.*')
+                ->permission('platform.systems.index')
+                ->sort(1000),
 
             Menu::make(__('Users'))
                 ->icon('user')
@@ -169,6 +170,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
+
+            Menu::make(__('Técnicos'))
+                ->icon('friends')
+                ->route('platform.tecnicos'),
         ];
     }
 
@@ -182,6 +187,10 @@ class PlatformProvider extends OrchidServiceProvider
             ItemPermission::group(__('System'))
                 ->addPermission('platform.systems.roles', __('Roles'))
                 ->addPermission('platform.systems.users', __('Users')),
+
+            ItemPermission::group(__('Ferramentas'))
+                ->addPermission('platform.tecnicos', __('Tecnicos')),
+
         ];
     }
 }
