@@ -56,7 +56,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('calendar')
                 ->route('platform.plantao'),
 
-            Menu::make(__('Técnicos'))
+            Menu::make('Técnicos')
                 ->icon('friends')
                 ->route('platform.tecnicos')
                 ->permission('platform.tecnicos'),
@@ -171,9 +171,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
 
-            Menu::make(__('Técnicos'))
-                ->icon('friends')
-                ->route('platform.tecnicos'),
+            
         ];
     }
 
