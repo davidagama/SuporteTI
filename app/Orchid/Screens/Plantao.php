@@ -52,6 +52,15 @@ class Plantao extends Screen
     }
 
     /**
+     * @return iterable|null
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'platform.plantao',
+        ];
+    }
+    /**
      * Button commands.
      *
      * @return \Orchid\Screen\Action[]
