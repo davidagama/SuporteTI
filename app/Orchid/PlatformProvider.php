@@ -8,6 +8,7 @@ use Orchid\Platform\Dashboard;
 use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
 use Orchid\Screen\Actions\Menu;
+use Orchid\Screen\Actions\DropDown;
 use Orchid\Support\Color;
 
 class PlatformProvider extends OrchidServiceProvider
@@ -29,6 +30,7 @@ class PlatformProvider extends OrchidServiceProvider
     {
         return [
 
+
             Menu::make(__('Systems'))
                 ->icon('lock')
                 ->slug('Auth')
@@ -36,16 +38,24 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('platform.systems.index')
                 ->sort(1000),
 
-            Menu::make(__('Users'))
-                ->icon('user')
-                ->route('platform.systems.users')
-                ->permission('platform.systems.users')
-                ->title(__('Sistema')),
+            Menu::make('Sistema')
+                ->icon('settings')
+                ->list([
+                    Menu::make(__('Users'))
+                        ->icon('user')
+                        ->route('platform.systems.users')
+                        ->permission('platform.systems.users'),
 
-            Menu::make(__('Roles'))
-                ->icon('lock')
-                ->route('platform.systems.roles')
-                ->permission('platform.systems.roles'),
+                    Menu::make(__('Roles'))
+                        ->icon('lock')
+                        ->route('platform.systems.roles')
+                        ->permission('platform.systems.roles'),
+                ])
+                ->permission('platform.systems.users'),
+
+
+
+
 
             Menu::make('Tabelas')
                 ->icon('table')
