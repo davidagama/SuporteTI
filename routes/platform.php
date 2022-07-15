@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\BlogScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -24,6 +25,8 @@ use App\Orchid\Screens\Plantao;
 use App\Orchid\Screens\Tecnicos;
 use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
+use App\Orchid\Screens\EmailSenderScreen;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -124,6 +127,10 @@ Route::screen('dominios', Dominios::class)->name('platform.dominios');
 Route::screen('estabelecimentos', Estabelecimentos::class)->name('platform.estabelecimentos');
 Route::screen('plantoes', Plantao::class)->name('platform.plantao');
 Route::screen('tecnicos', Tecnicos::class)->name('platform.tecnicos');
+
+Route::screen('blog', BlogScreen::class)->name('platform.blog');
+
+
 /* Route::screen('tecnicos', Tecnicos::class)
 ->name('platform.tecnicos')
 ->breadcrumbs(function (Trail $trail) {
@@ -136,8 +143,15 @@ Route::screen('tecnicos', Tecnicos::class)->name('platform.tecnicos');
 
 Route::screen('post/{post?}', PostEditScreen::class)
     ->name('platform.post.edit');
-    
+
 Route::screen('posts', PostListScreen::class)
     ->name('platform.post.list');
+
+Route::screen('email', EmailSenderScreen::class)->name('platform.email')
+->breadcrumbs(function (Trail $trail){
+    return $trail
+            ->parent('platform.index')
+            ->push('Email sender');
+});
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');

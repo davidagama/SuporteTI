@@ -76,6 +76,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('book-open')
                 ->route('platform.post.list')
                 ->permission('platform.post.list'),
+
+            Menu::make('Emails')
+                ->icon('envelope-letter')
+                ->route('platform.email'),
             /* ->list([
                     Menu::make('Ips e Domínios')->icon('table')->route('platform.dominios'),
                     
