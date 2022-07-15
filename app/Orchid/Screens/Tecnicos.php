@@ -47,7 +47,7 @@ class Tecnicos extends Screen
         return 'Tecnicos';
        
     }
-///////
+
     /**
      * @return iterable|null
      */
