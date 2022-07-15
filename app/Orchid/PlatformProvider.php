@@ -54,7 +54,8 @@ class PlatformProvider extends OrchidServiceProvider
 
             Menu::make('Plantões')
                 ->icon('calendar')
-                ->route('platform.plantao'),
+                ->route('platform.plantao')
+                ->permission('platform.plantao'),
 
             Menu::make('Técnicos')
                 ->icon('friends')
@@ -63,7 +64,8 @@ class PlatformProvider extends OrchidServiceProvider
 
             Menu::make('Publicações')
                 ->icon('book-open')
-                ->route('platform.post.list'),
+                ->route('platform.post.list')
+                ->permission('platform.post.list'),
             /* ->list([
                     Menu::make('Ips e Domínios')->icon('table')->route('platform.dominios'),
                     
@@ -171,7 +173,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
 
-            
+
         ];
     }
 
@@ -187,7 +189,9 @@ class PlatformProvider extends OrchidServiceProvider
                 ->addPermission('platform.systems.users', __('Users')),
 
             ItemPermission::group(__('Ferramentas'))
-                ->addPermission('platform.tecnicos', __('Tecnicos')),
+                ->addPermission('platform.tecnicos', __('Tecnicos'))
+                ->addPermission('platform.plantao', __('Plantões'))
+                ->addPermission('platform.post.list', __('Publicações')),
 
         ];
     }
