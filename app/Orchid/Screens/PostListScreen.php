@@ -38,6 +38,15 @@ class PostListScreen extends Screen
     }
 
     /**
+     * @return iterable|null
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'platform.post.list',
+        ];
+    }
+    /**
      * Button commands.
      *
      * @return Link[]
