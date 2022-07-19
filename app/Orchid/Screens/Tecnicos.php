@@ -68,7 +68,7 @@ class Tecnicos extends Screen
             ModalToggle::make('Novo')
                 ->modal('Novo')
                 ->method('create')
-                ->icon('pencil')
+                ->icon('pencil'),
         ];
     }
 
@@ -121,7 +121,8 @@ class Tecnicos extends Screen
                 Layout::modal('Alterar', Layout::rows([
                     Input::make('tecnicos.col_nome')
                         ->title('Nome')
-                        ->required(),
+                        ->required()
+                        ,
     
                     Input::make('tecnicos.col_matricula')
                         ->title('Código')

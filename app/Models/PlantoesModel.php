@@ -5,6 +5,7 @@ namespace App\Models;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class PlantoesModel extends Model
 {
@@ -19,7 +20,17 @@ class PlantoesModel extends Model
     }
     protected $appends = ['col_data'];
 
-
+/**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope('data', function (Builder $builder) {
+            $builder->whereMonth('col_data', now())->whereYear('col_data', now());
+        });
+    }
 
 
 

@@ -50,7 +50,7 @@ class Tabelas extends Screen
 
     /**
      * Display header name.
-     *
+     * {{date('Y')}}
      * @return string|null
      */
 
@@ -123,7 +123,15 @@ class Tabelas extends Screen
         ];
     }
 
-
+/**
+ * The number of links to display on each side of current page link.
+ *
+ * @return int
+ */
+protected function onEachSide(): int
+{
+    return 3;
+}
     
 
     

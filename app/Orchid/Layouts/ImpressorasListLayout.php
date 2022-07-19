@@ -117,4 +117,14 @@ class ImpressorasListLayout extends Table
                 }),
             ];
     }
+
+    /**
+ * The number of links to display on each side of current page link.
+ *
+ * @return int
+ */
+protected function onEachSide(): int
+{
+    return 3;
+}
 }

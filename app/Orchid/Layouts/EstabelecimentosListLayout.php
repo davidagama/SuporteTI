@@ -51,6 +51,8 @@ class EstabelecimentosListLayout extends Table
                 TD::make('col_ecf', 'ECF')
                 ->sort()
                 ->filter(TD::FILTER_TEXT)
+                ->defaultHidden()
+                
                 ->render(function (EstabelecimentosModel $estabelecimento) {
                     return ModalToggle::make($estabelecimento->col_ecf)
                     /* ->modal('Alterar')

@@ -205,8 +205,9 @@ class PlatformProvider extends OrchidServiceProvider
             ItemPermission::group(__('Ferramentas'))
                 ->addPermission('platform.tecnicos', __('Tecnicos'))
                 ->addPermission('platform.plantao', __('Plantões'))
-                ->addPermission('platform.post.list', __('Publicações')),
-
+                ->addPermission('platform.post.list', __('Publicações'))
+                ->addPermission('platform.email', __('Emails')),
+                
         ];
     }
 }
