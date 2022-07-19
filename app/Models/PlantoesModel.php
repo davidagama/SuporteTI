@@ -22,6 +22,9 @@ class PlantoesModel extends Model
 
 /**
      * The "booted" method of the model.
+     * 
+     * Essa função modifica a exibição da tabela de plantões
+     * fazendo com que a mesma exiba apenas os plantoes do mes e ano atual
      *
      * @return void
      */

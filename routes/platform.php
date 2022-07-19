@@ -22,6 +22,7 @@ use App\Orchid\Screens\Tabelas;
 use App\Orchid\Screens\Dominios;
 use App\Orchid\Screens\Estabelecimentos;
 use App\Orchid\Screens\Plantao;
+use App\Orchid\Screens\PlantaoHistorico;
 use App\Orchid\Screens\Tecnicos;
 use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
@@ -126,6 +127,7 @@ Route::screen('tabelas', Tabelas::class)->name('platform.tabelas');
 Route::screen('dominios', Dominios::class)->name('platform.dominios');
 Route::screen('estabelecimentos', Estabelecimentos::class)->name('platform.estabelecimentos');
 Route::screen('plantoes', Plantao::class)->name('platform.plantao');
+Route::screen('historico-de-plantoes', PlantaoHistorico::class)->name('platform.plantao.historico');
 Route::screen('tecnicos', Tecnicos::class)->name('platform.tecnicos');
 
 Route::screen('blog', BlogScreen::class)->name('platform.blog');

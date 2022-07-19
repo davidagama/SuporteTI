@@ -19,7 +19,7 @@ use App\Models\TecnicosModel;
 use Orchid\Screen\Actions\Button;
 use Symfony\Component\Console\Helper\FormatterHelper;
 
-class Plantao extends Screen
+class PlantaoHistorico extends Screen
 {
 
 
@@ -34,7 +34,7 @@ class Plantao extends Screen
 
 
 
-            'plantao' => PlantoesModel::filters()->defaultSort('col_data', 'desc')->paginate(),
+            'plantao' => PlantoesModel::withoutGlobalScope('data')->filters()->defaultSort('col_data', 'desc')->paginate(),
         ];
     }
 
@@ -49,7 +49,7 @@ class Plantao extends Screen
 
     public function name(): ?string
     {
-        return 'Plantoes';
+        return 'Historico de Plantões';
     }
 
     /**
@@ -74,8 +74,8 @@ class Plantao extends Screen
                 ->method('create')
                 ->icon('pencil'),
 
-            Button::make('histórico')
-                ->icon('history')
+                Button::make('voltar')
+                ->icon('arrow-left-circle')
                 ->method('historico'),
 
 
@@ -110,7 +110,7 @@ class Plantao extends Screen
 
                 Relation::make('plantao.tecnicos_id')
                     ->title('Com o técnico: ')
-
+                    
                     ->fromModel(TecnicosModel::class, 'col_nome')
 
             ]))->title('Confirmar exclusão?')
@@ -128,7 +128,7 @@ class Plantao extends Screen
 
                 Relation::make('plantao.tecnicos_id')
                     ->title('Técnico')
-
+                    
                     ->required()
                     ->placeholder('Selecione o técnico')
                     ->help('Selecione o técnico para este plantão')
@@ -245,6 +245,6 @@ class Plantao extends Screen
     {
 
 
-        return redirect()->route('platform.plantao.historico');
+        return redirect()->route('platform.plantao');
     }
 }
