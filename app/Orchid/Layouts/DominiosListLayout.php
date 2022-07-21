@@ -34,69 +34,69 @@ class DominiosListLayout extends Table
         return [
             TD::make('col_lojas', 'Nome')
                 ->sort()
-                ->render(function (DominiosModel $dominio) {
+                /*->render(function (DominiosModel $dominio) {
                     return ModalToggle::make($dominio->col_lojas)
-                    /* ->modal('Alterar')
-                    ->method('update') */
+                     ->modal('Alterar')
+                    ->method('update') 
                     ->parameters([
                         'col_id' => $dominio->col_id,
                     ]);
-                }),
+                })*/,
                 TD::make('col_numero', 'N°')
                 ->sort()
                 ->filter(TD::FILTER_NUMERIC)
-                ->render(function (DominiosModel $dominio) {
+                /*->render(function (DominiosModel $dominio) {
                     return ModalToggle::make($dominio->col_numero)
-                    /* ->modal('Alterar')
-                    ->method('update') */
+                     ->modal('Alterar')
+                    ->method('update')
                     ->parameters([
                         'col_id' => $dominio->col_id,
                     ]);
-                }),
+                }) */,
                 TD::make('col_ip', 'IP')
                 ->sort()
                 ->filter(TD::FILTER_TEXT)
-                ->render(function (DominiosModel $dominio) {
+                /*->render(function (DominiosModel $dominio) {
                     return ModalToggle::make($dominio->col_ip)
-                    /* ->modal('Alterar')
-                    ->method('update') */
+                     ->modal('Alterar')
+                    ->method('update') 
                     ->parameters([
                         'col_id' => $dominio->col_id,
                     ]);
-                }),
+                })*/,
                 TD::make('col_iptef', 'IP TEF')
                 ->sort()
                 ->filter(TD::FILTER_TEXT)
-                ->render(function (DominiosModel $dominio) {
+                /*->render(function (DominiosModel $dominio) {
                     return ModalToggle::make($dominio->col_iptef)
-                    /* ->modal('Alterar')
-                    ->method('update') */
+                     ->modal('Alterar')
+                    ->method('update') 
                     ->parameters([
                         'col_id' => $dominio->col_id,
                     ]);
-                }),
+                })*/,
                 TD::make('col_ipsom', 'IP SOM')
                 ->sort()
                 ->filter(TD::FILTER_TEXT)
-                ->render(function (DominiosModel $dominio) {
+                /*->render(function (DominiosModel $dominio) {
                     return ModalToggle::make($dominio->col_ipsom)
-                    /* ->modal('Alterar')
-                    ->method('update') */
+                     ->modal('Alterar')
+                    ->method('update') 
                     ->parameters([
                         'col_id' => $dominio->col_id,
                     ]);
-                }),
+                })*/,
                 TD::make('col_dominio', 'Domínio')
                 ->sort()
                 ->filter(TD::FILTER_TEXT)
-                ->render(function (DominiosModel $dominio) {
+                /*->render(function (DominiosModel $dominio) {
                     return ModalToggle::make($dominio->col_dominio)
-                    /* ->modal('Alterar')
-                    ->method('update') */
+                     ->modal('Alterar')
+                    ->method('update') 
                     ->parameters([
                         'col_id' => $dominio->col_id,
                     ]);
-                }),
+                })*/,
             ];
     }
 }

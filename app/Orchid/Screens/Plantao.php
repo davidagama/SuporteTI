@@ -17,6 +17,7 @@ use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Fields\Relation;
 use App\Models\TecnicosModel;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\DateTimer;
 use Symfony\Component\Console\Helper\FormatterHelper;
 
 class Plantao extends Screen
@@ -69,6 +70,8 @@ class Plantao extends Screen
     public function commandBar(): iterable
     {
         return [
+            
+
             ModalToggle::make('Novo Plantão')
                 ->modal('Novo')
                 ->method('create')
@@ -92,15 +95,19 @@ class Plantao extends Screen
     {
         return [
 
+           /*  Layout::rows([
+
+               
+                    DateTimer::make('AllowEmpty')
+                        ->title('Calendário')
+                        ->format('d-m-Y')
+                        ,
+                
+            ]), */
+                
 
             PlantoesListLayout::class,
-            // Layout::rows([
-
-            //     Group::make([
-            //         DateRange::make('rangeDate')
-            //                 ->title('Range date'),
-            //     ]),
-            // ]),
+            
 
             //Modal responsável pela pergunta de confirmação de exclusão
             Layout::modal('exclusao', Layout::rows([

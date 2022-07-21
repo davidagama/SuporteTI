@@ -14,6 +14,9 @@ class PlantoesModel extends Model
 
     protected $dates = ['col_data'];
     //protected $dateFormat = 'm-d-Y';
+   /*  Esse metodo altera o formato de visualização da data 
+    mas isso faz com que os dados não sejam carregados no input de datas 
+    quando vai ser feito uma alteração */
     public function getData2Attribute()
     {
         return date('m-d-Y', strtotime($this->attributes['col_data']));

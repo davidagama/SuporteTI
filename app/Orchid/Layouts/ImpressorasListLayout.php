@@ -96,25 +96,25 @@ class ImpressorasListLayout extends Table
                 TD::make('col_endereco', 'Endereço')
                 
                 
-                ->render(function (ImpressorasModel $impressoras) {
+                /* ->render(function (ImpressorasModel $impressoras) {
                     return ModalToggle::make($impressoras->col_endereco)
                     /* ->modal('Alterar')
-                    ->method('update') */
+                    ->method('update') 
                     ->parameters([
                         'col_id' => $impressoras->col_id,
                     ]);
-                }),
+                }) */,
                 TD::make('col_obs', 'Observação')
                 
                 
-                ->render(function (ImpressorasModel $impressoras) {
+                /* ->render(function (ImpressorasModel $impressoras) {
                     return ModalToggle::make($impressoras->col_obs)
                     /* ->modal('Alterar')
-                    ->method('update') */
+                    ->method('update') 
                     ->parameters([
                         'col_id' => $impressoras->col_id,
                     ]);
-                }),
+                }) */,
             ];
     }
 
